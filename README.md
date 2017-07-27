@@ -3,11 +3,13 @@
  
 [![Clojars Project](https://img.shields.io/clojars/v/resource-seq.svg)](https://clojars.org/resource-seq)
 
-A library for unifying resource access between repl and jar.
+A clojure library for unifying resource access between repl and jar.
+
+## Rationale
 
 In the repl `clojure.java.io/resource` often helpfully returns a File object.
 
-In a jar `clojure.java.io/reources` can unhelpfully return and URL object.
+In a jar `clojure.java.io/reources` can unhelpfully return a URL object.
 
 This might not be that bad, until you want to call `file-seq`.
 
