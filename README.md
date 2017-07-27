@@ -1,4 +1,7 @@
-# resource-seq
+
+# resource-seq 
+ 
+[![Clojars Project](https://img.shields.io/clojars/v/resource-seq.svg)](https://clojars.org/resource-seq)
 
 A library for unifying resource access between repl and jar.
 
@@ -10,7 +13,7 @@ This might not be that bad, until you want to call `file-seq`.
 
 ## Usage
 
-Clojars: `[resource-seq "0.0.1"]`
+Clojars: `[resource-seq "0.1.0"]`
 
 Then call `(resource-seq.core/resource-seq)`.
 
