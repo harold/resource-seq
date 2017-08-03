@@ -2,7 +2,7 @@
   (:require [clojure.java.io :as io]
             [clojure.java.classpath :as cp])
   (:import [java.util.jar JarFile JarEntry]
-           [java.io File]))
+           [java.io File FileInputStream]))
 
 (defn- jarfile->entries
   [^JarFile jarfile]
@@ -10,7 +10,7 @@
        (enumeration-seq)
        (map (fn [^JarEntry jarentry]
               [(str (.getName jarfile) "/" (.getName jarentry))
-               (io/reader (.getInputStream jarfile jarentry))]))))
+               #(.getInputStream jarfile jarentry)]))))
 
 (defn- jarfile-entries
   []
@@ -21,7 +21,7 @@
   [directory]
   (->> (file-seq directory)
        (remove (fn [^File file] (.isDirectory file)))
-       (map (fn [^File file] [(.getPath file) (io/reader file)]))))
+       (map (fn [^File file] [(.getPath file) #(FileInputStream. file)]))))
 
 (defn- directory-entries
   []
