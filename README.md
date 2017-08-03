@@ -20,7 +20,7 @@ Then call `(resource-seq.core/resource-seq)`.
 
 The return value is a sequence of pairs where each first element is a string "path" that can be used for filtering, and each second element is a function of no arguments that when called returns a `java.io.InputStream` that can be used to get the contents of the resource.
 
-See [the simple example](examples/simple/src/simple/core.cljs).
+See [the simple example](examples/simple/src/simple/core.clj).
 
 ## License
 
